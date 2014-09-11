@@ -33,3 +33,16 @@ module Functions where
     length' :: (Ord a, Integral b) => [a] -> b
     length' [] = 0
     length' (_:xs) = 1+ length' xs
+
+    reverse' :: (Ord a) => [a] -> [a]
+    reverse' [] = []
+    reverse' (x:xs) = reverse' xs ++ [x]
+
+    palindrome' :: (Eq a) => [a] -> Bool
+    palindrome' [_] = True
+    palindrome' (x:xs) = x == last xs && palindrome' (init xs)
+
+    data Tree a = Leaf a | Node [Tree a]
+    flatten' :: Tree a -> [a]
+    flatten' (Leaf a) = [a]
+    flatten' (Node xa) = concatMap flatten' xa
