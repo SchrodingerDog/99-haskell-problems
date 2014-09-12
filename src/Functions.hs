@@ -48,5 +48,11 @@ module Functions where
     flatten' (Leaf a) = [a]
     flatten' (Node xa) = concatMap flatten' xa
 
-    compress' ::(Eq a)=> [a] -> [a]
+    compress' :: Eq a => [a] -> [a]
     compress' = map head .group
+
+    pack' :: Eq a => [a] -> [[a]]
+    pack' = group
+
+    encode' :: Eq a =>[a] -> [(Int, a)]
+    encode' xs = map (\x -> (length x,head x)) (group xs)

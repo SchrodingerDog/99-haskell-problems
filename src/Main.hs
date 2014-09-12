@@ -31,3 +31,7 @@ main = do
     --Skompresuj
     print (compress' "aaaabccaadeeee")
     print (compress' [1,1,1,2,2,1,1,4,3,1,1,2,5,1,2,3])
+    --Spakuj
+    print (pack' "aaaabccaadeeee")
+    --Długość części
+    print (encode' "aaaabccaadeeee")
