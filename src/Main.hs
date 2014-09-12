@@ -28,3 +28,6 @@ main = do
     print (flatten' (Leaf 5) )
     print (flatten' (Node [Leaf 1, Leaf 2]))
     print (flatten' (Node [Leaf 1, Node [Leaf 2, Node [Leaf 3, Leaf 4], Leaf 5]]))
+    --Skompresuj
+    print (compress' "aaaabccaadeeee")
+    print (compress' [1,1,1,2,2,1,1,4,3,1,1,2,5,1,2,3])

@@ -1,4 +1,5 @@
 module Functions where
+    import Data.List
     fib :: Int -> Int
     fib x
         | x > 1 = fib(x-1) + fib(x-2)
@@ -46,3 +47,6 @@ module Functions where
     flatten' :: Tree a -> [a]
     flatten' (Leaf a) = [a]
     flatten' (Node xa) = concatMap flatten' xa
+
+    compress' ::(Eq a)=> [a] -> [a]
+    compress' = map head .group
